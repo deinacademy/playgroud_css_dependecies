@@ -1,0 +1,32 @@
+h1 {
+    text-align: right;
+}
+
+h1:before {
+    content: "Android Platform";
+}
+
+input[type=radio] {
+    border-radius: 50%;
+    width: 13px;
+    height: 13px;
+}
+
+input[type="radio"]:checked,
+input[type="radio"]:active,
+input[type="radio"]:focus
+{
+    border-radius: 50%;
+}
+
+#default {
+    color: black;
+}
+
+#android {
+    color: green;
+}
+
+#ios {
+    color: black;
+}

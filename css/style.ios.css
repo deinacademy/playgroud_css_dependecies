@@ -1,0 +1,32 @@
+h1 {
+    text-align: left;
+}
+
+h1:before {
+    content: "iOS Platform";
+}
+
+input[type="radio"] {
+    border-radius: 25%;
+    width: 16px;
+    height: 16px;
+}
+
+input[type="radio"]:checked,
+input[type="radio"]:active,
+input[type="radio"]:focus
+{
+    border-radius: 25%;
+}
+
+#default {
+    color: black;
+}
+
+#android {
+    color: black;
+}
+
+#ios {
+    color: purple;
+}

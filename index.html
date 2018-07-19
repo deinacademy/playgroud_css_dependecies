@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <h1 class="platform"></h1>
+
+        <form>
+            <input type="radio" name="selection" value="n"><label for="n"><span></span>No</label>
+            <input type="radio" name="selection" value="s" class="error"><label for="s"><span></span>Si</label>
+            <input type="radio" name="selection" value="p"><label for="p"><span></span>NPI</label>
+        </form>
+
+        <!-- <form>
+            <input type="checkbox" name="selection" value="n"><label for="n"><span></span>No</label>
+            <input type="checkbox" name="selection" value="s" class="error"><label for="s"><span></span>Si</label>
+            <input type="checkbox" name="selection" value="p"><label for="p"><span></span>NPI</label>
+        </form> -->
+
+        <br/>
+
+        <input id="default" type="button" value="default">
+        <input id="android" type="button" value="android">
+        <input id="ios" type="button" value="ios">
+        <input id="alert" type="button" value="alert">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="js/script.js"></script>
+
+        <script>
+            $( document ).ready(function() {
+                $('#android').on("click", function() {
+                    changePlatform($(this).attr("value"));
+                });
+
+                $('#ios').on("click", function() {
+                    changePlatform($(this).attr("value"));
+                });
+
+                $('#default').on("click", function() {
+                    removeStyle();
+                });
+
+                $('#default').on("click", function() {
+                    removeStyle();
+                });
+
+                $('#alert').on("click", function() {
+                    alertMessage();
+                });
+
+                changePlatform = function(platform){
+                    removeStyle();
+                    $('<link/>', {rel: 'stylesheet', href: 'css/style' + ( platform ? '.' + platform : '' ) + '.css'}).appendTo('head');
+                    $('<script/>', {src: 'js/script' + ( platform ? '.' + platform : '' ) + '.js'}).appendTo('body');
+                }
+
+                removeStyle = function() {
+                    $("link[href*='css/style.android.css']").remove();
+                    $("link[href*='css/style.ios.css']").remove();
+                    $("script[src*='js/script.android.js']").remove();
+                    $("script[src*='js/script.ios.js']").remove();
+                };
+            });
+        </script>
+    </body>
+</html>
